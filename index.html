@@ -22,6 +22,7 @@
         background: var(--color-neutral-95);
         max-width: min(75vw, 80em);
         margin: 0 auto;
+        font-family: Georgia, 'Times New Roman', Times, serif;
       }
 
       /* Headings */
@@ -164,23 +165,6 @@
         <h3>Higher Quality Sex Education is Associated with A Higher Abortion Rate in 15-19 Year Olds</h3>
 
         <figure>
-          <img src="ed_less_abort.png" alt="" />
-          <figcaption>BRIEF CAPTION HERE.</figcaption>
-        </figure>
-
-        <p>Design Decisions and Rationale:</p>
-
-        <ul>
-          <li>Decision 1: Type of Figure</li>
-          <li>Decision 2: Y axis range</li>
-          <li>Decision 3: Background color</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Higher Quality Sex Education is Associated With a Higher Number Abortions in Women Under 15 </h3>
-
-        <figure>
           <img src="ed_more_abort.png" alt="" />
           <figcaption>BRIEF CAPTION HERE.</figcaption>
         </figure>
@@ -188,9 +172,67 @@
         <p>Design Decisions and Rationale:</p>
 
         <ul>
-          <li>Decision 1: Type of Figure</li>
-          <li>Decision 2: Y axis range</li>
-          <li>Decision 3: Background color</li>
+          <li>
+            <section>
+              <h3>Binning of Data</h3>
+              <p><strong>Deception Score:</strong> -1.5</p>
+              <p>The data binning method was the same for both visualizations. I was interested in depicting whether there was a relationship or association between abortion rate and sex education, but when I just looked at the data at the state level, I did not actually find a strong correlation between quality of sex education and any sort of abortion metric that was contained in the data. I had the idea to bin the data based on the “grade” that each state received for their quality of sex education (with the sex education data coming from seicus.org), with A, B, and C grades being “Pass” and D and F grades constituting a “Fail” in order to determine whether there were overall trends between what could be considered good and bad sex education, but binning the data removed some of the nuances of the original dataset. This decision to aggregate my data so that it was in two groups rather than 50 groups made it so that my visualization would be simpler (two bars instead of 50) and therefore likely easier to interpret and be persuaded. The design choice made it easier for me to persuade the reader because it separated states into pre-selected bins of “good” and “bad” quality of sex education that were already pre-determined for the reader.</p>
+            </section>
+          </li>
+          <li>
+            <section>
+              <h3>Data Transformations</h3>
+              <p><strong>Deception Score:</strong> 1.5</p>
+              <p>After I grouped the data by Pass/Fail State Sex Education Policy Score, the aggregation function that I chose was the mean, so that I could find the mean abortion metrics included in the datasets and compare them between the Pass state group and the Fail state group. The use of the mean itself as an aggregation function or data transformation is not deceptive on its own, and it was used for this visualization because I wanted to compare abortion rates between the two groups. Because I wanted to compare rates, using an aggregation function like sum would not have made mathematical sense, and the large diversity of rates in the dataset would have made a measure of central tendency like mode also an ineffective aggregation method, so I settled on using the mean.</p>
+            </section>
+          </li>
+          <li>
+            <section>
+              <h3>Y Axis Selection</h3>
+              <p><strong>Deception Score:</strong> -2</p>
+              <p>After doing all my data transformations (bringing in the sex education data, binning the states into the Pass and Fail groups, and taking the mean of each column in the dataset), I searched the data for an interesting relationship between one of the abortion rate metrics and the groups, and I found that in the states with a Sex Education Policy Score that was passing, the average abortion rate in 15–19 year olds was higher than in states with a Sex Education Policy Score that was failing. This was very interesting to me, as sex education is usually taught in high schools, and I wanted to focus my visualization on the teen abortion rate specifically, given that most teenagers are in high school (where they would be receiving sex education). Because I wanted to tell the story that more comprehensive sex education leads to more teen abortions, I chose a column that directly supported that proposition and ignored the other columns that suggested something different.</p>
+            </section>
+          </li>
+          <li>
+            <section>
+              <h3>Y Axis Range</h3>
+              <p><strong>Deception Score:</strong> -2</p>
+              <p>The y-axis was deliberately altered in order to emphasize the difference between the two groups and make the difference between the two groups appear much larger than it actually is. The passing states only have an abortion rate of around 7.5 abortions per 1,000 women ages 15–19, compared to the failing states having a rate of around 6 abortions per 1,000 women aged 15–19, but the y axis starting at 4.5 abortions per 1,000 women aged 15–19 causes the passing states bar to be twice the size of the failing states bar, and implicitly signals to the reader that the passing states have an abortion rate twice that of the failing states, even though that is not true. The use of a y axis starting at 4.5 instead of 0 enabled the visualization to be more persuasive because it implies a relationship between the groups that is an exaggeration of the actual relationship between them, to the benefit of the proposition.</p>
+            </section>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Higher Quality Sex Education is Associated With a Higher Number Abortions in Women Under 15 </h3>
+
+        <figure>
+          <img src="ed_less_abort.png" alt="" />
+          <figcaption>BRIEF CAPTION HERE.</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>
+            <h4>Binning of Data</h4>
+            <p><strong>Deception Score:</strong> -1.5</p>
+            <p>The data binning method was the same for both visualizations. The data binning method was the same for both visualizations. I was interested in depicting whether there was a relationship or association between abortion metrics and sex education, but when I just looked at the data at the state level, I did not actually find a strong correlation between quality of sex education and any sort of abortion metric that was contained in the data. I had the idea to bin the data based on the “grade” that each state received for their quality of sex education (with the sex education data coming from seicus.org), with A, B, and C grades being “Pass” and D and F grades constituting a “Fail” in order to determine whether there were overall trends between what could be considered good and bad sex education, but binning the data removed some of the nuances of the original dataset. This decision to aggregate my data so that it was in two groups rather than 50 groups made it so that my visualization would be simpler (two bars instead of 50) and therefore likely easier to interpret and be persuaded. The design choice made it easier for me to persuade the reader because it separated states into pre-selected bins of “good” and “bad” quality of sex education that were already pre-determined for the reader.</p>
+          </li>
+          <li>
+            <h4>Data Transformations</h4>
+            <p><strong>Deception Score:</strong> -1</p>
+            <p>After I binned my data into the two groups (Pass and Fail states for State Sex Education Policy Score), I chose to use sum as my aggregation function. I specifically chose sum because a sum of the absolute numbers in each group could have the potential to be deceptive. Similar to the idea that some chloropleth maps are a map of population density, population is a potential confounding variable when we take the sum of multiple states in each group. For example, one group having a higher number of total abortions performed on teens may simply be because there are more states or a larger population living in states that belong to that group, and do not reflect any association between sex education policy and teen abortion rate. This potential for deception is not present if aggregation functions such as mean or median were employed, as they measure central tendency and would reflect an average state in each group and not the sum total of each group of states. However, using sum as my aggregation function made it so that I was only able to compare absolute numbers and not rates between groups, as it does not make mathematical sense in this case to take the sum of rates in a group to create a group rate. This transformation makes my visualization more persuasive by allowing me to present data that may have a confounding variable present and use it to support the proposition. </p>
+          </li>
+          <li>
+            <h4>Y Axis Selection</h4>
+            <p><strong>Deception Score:</strong> -2</p>
+            <p>The column that was plotted on the y axis was chosen deliberately, in conjunction with the aggregation method of data transformation. Because the aggregation method was chosen was sum, the only columns that could be compared were the columns recording the total number of abortions for each age group. The column of total number of abortions in women younger than 15 was chosen because it was the only column in this transformed data set that supported the proposition. In the other teenage age groups (15-17, 15-19), the total number of abortions in each group (Pass and Fail State Sex Education Policy Score) did not reflect the trend I intended to convey with this proposition, so they were deliberately not included in the visualization. The specific inclusion and exclusion of specific columns made the visualization more persuasive because it only showed a subset of data that supported the proposition and did not show data that did not support the proposition.</p>
+          </li>
+          <li>
+            <h4>Y Axis Range</h4>
+            <p>Additionally, the y axis range was also intentionally chosen and altered in order to over emphasize the difference between groups. The states with a grade of Pass have a total of approximately 950 abortions in women under 15 in 2017, and the states with a grade of Fail have a total of approximately 1,200 abortions performed in women under 15 in 2017, but the y axis begins at 900 abortions, which makes it so that the bar representing the states with a grade of Pass is several times smaller than the bar representing the states with a grade of Fail, and implies that the number of abortions in that the the Fail group is performing abortions at a rate many times higher than the Pass group, when the actual difference between the groups is around 250 abortions performed in women under 15 (and that is not a large a difference as the visualization implies). This made the visualization more effective by drawing attention to the differences in groups that supported the proportion.)</p>
+          </li>
         </ul>
       </section>
 
